@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View,Image, Dimensions } from 'react-native'
-
+import { AntDesign } from '@expo/vector-icons'; 
 const BlogDetail = ({ route, navigation }) => {
     const { width, height } = Dimensions.get("screen");
     const { item } = route.params;
@@ -16,6 +16,7 @@ const BlogDetail = ({ route, navigation }) => {
                    
                   }}
                 />
+                
                 <View style={{
                     backgroundColor: "white",
                     height: 35,
@@ -24,6 +25,7 @@ const BlogDetail = ({ route, navigation }) => {
                     borderTopRightRadius:20 ,
                     borderTopLeftRadius:20 ,
                 }}/>
+                <AntDesign onPress={()=>navigation.navigate("Blog")} name="caretleft" size={24} color="black" />
                 <View>
                     <Text>{item.title}</Text>
                 </View>

@@ -51,9 +51,10 @@ export default ({navigation}) => {
                     width: 360,
                   alignItems: "center",
                   justifyContent: "flex-start",
-                  backgroundColor:"red",
+                  
                   margin: 10,
-                  backgroundColor:"#ebe6ff",
+                  
+                  
                   flexDirection:"row",
                   borderRadius:20,
                 }}

@@ -7,8 +7,9 @@ const Blog = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={{
-          backgroundColor:"#2f1369",
+          backgroundColor:"#121212",
           flex:1,
+          
           
           
           width:"100%" ,
@@ -37,7 +38,7 @@ const Blog = ({navigation}) => {
       <View style={{
           flex: 4,
           backgroundColor:"#fff",
-          
+          borderRadius:20,
           position: "relative",
           bottom: 15,
           
@@ -45,9 +46,9 @@ const Blog = ({navigation}) => {
         <ScrollView>
         <Text
         style={{
-            margin: 10,
+            marginLeft: 10,
             fontWeight:"bold",
-            fontSize:30,
+            fontSize:20,
         }}
         >Popular Articles</Text>
           

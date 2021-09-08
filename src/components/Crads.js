@@ -27,6 +27,7 @@ const imageW = width * 0.7;
 const imageH = imageW * 1.2;
 
 export default ({navigation}) => {
+  const xScroll = React.useRef(new Animated.Value(0)).current;
   return (
     
     <View
@@ -36,27 +37,50 @@ export default ({navigation}) => {
         backgroundColor: "#fff",
       }}
     >
-      <FlatList
+      <Animated.FlatList
         data={data}
         horizontal
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: xScroll } } }],
+          { useNativeDriver: true }
+        )}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({ item }) => {
+        renderItem={({ item,index }) => {
+          const inputRange = [
+            (index - 1) * 260,
+            index * 260,
+            (index + 1) * 260
+          ];
+
+          const opacity = xScroll.interpolate({
+            inputRange,
+            outputRange: [.6, 1, .6]
+          })
+
+          const scale = xScroll.interpolate({
+            inputRange,
+            outputRange: [.7, 1, .1]
+          })
           return (
             <TouchableOpacity onPress={()=>navigation.navigate("Detail", {
                 item:item
               })} >
-              <View
-                style={{
+              <Animated.View
+                style={[{
                     margin: 10,
                   alignItems: "flex-start",
                   justifyContent: "center",
-                }}
+                },{
+                   opacity,
+                   transform: [{scale}]
+                   
+                }]}
               >
                 <Image
                   source={{ uri: item.image }}
                   style={{
-                    width: imageW,
-                    height: imageH,
+                    width: 230,
+                    height: 280,
                     resizeMode: "cover",
                     margin: 10,
                     borderRadius: 25,
@@ -70,7 +94,7 @@ export default ({navigation}) => {
                     fontWeight:"800",
                     color: "#fff",
                 }}>{item.title}</Text>
-              </View>
+              </Animated.View>
             </TouchableOpacity>
           );
         }}
