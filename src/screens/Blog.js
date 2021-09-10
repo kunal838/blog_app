@@ -7,7 +7,7 @@ const Blog = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={{
-          backgroundColor:"#121212",
+          backgroundColor:"#222831",
           flex:1,
           
           
@@ -49,6 +49,7 @@ const Blog = ({navigation}) => {
             marginLeft: 10,
             fontWeight:"bold",
             fontSize:20,
+            color: "#393E46",
         }}
         >Popular Articles</Text>
           

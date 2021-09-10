@@ -16,6 +16,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Blog from "./src/screens/Blog";
 import BlogDetail from "./src/screens/BlogDetail";
+import TopLayer, {useData} from "./src/context/TopLayer";
 export default function App() {
  
 
@@ -23,18 +24,22 @@ export default function App() {
 
   return (
   
-    
+    <TopLayer>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}
       >
+         
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Blog" component={Blog} />
         <Stack.Screen name="Detail" component={BlogDetail} />
+       
       </Stack.Navigator>
     </NavigationContainer>
+    </TopLayer>
+   
   );
 }
 

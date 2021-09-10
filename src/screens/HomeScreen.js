@@ -10,6 +10,7 @@ import {
   import LottieView from "lottie-react-native";
 import { StatusBar } from 'expo-status-bar';
 export default function HomeScreen({ navigation }) {
+  
     return (
       <View style={styles.container}>
         <View
@@ -18,7 +19,7 @@ export default function HomeScreen({ navigation }) {
 
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "white",
+            backgroundColor: "#fff",
             width: "100%",
             borderBottomEndRadius: 100,
             borderBottomLeftRadius: 100,
@@ -50,7 +51,7 @@ export default function HomeScreen({ navigation }) {
           style={{
             flex: 1,
             position: "relative",
-            bottom: 80,
+          
 
             width: "100%",
           }}
@@ -61,31 +62,7 @@ export default function HomeScreen({ navigation }) {
               marginTop: 10,
             }}
           >
-            <Text
-              style={{
-                fontSize: 40,
-                fontWeight: "bold",
-                color: "#000",
-              }}
-            >
-              You are in
-            </Text>
-            <Text
-              style={{
-                fontSize: 30,
-                fontWeight: "bold",
-              }}
-            >
-              exactly the
-            </Text>
-            <Text
-              style={{
-                fontSize: 30,
-                fontWeight: "bold",
-              }}
-            >
-              right place
-            </Text>
+           
           </View>
           <TouchableOpacity
           onPress={()=>navigation.navigate("Blog")}
@@ -99,7 +76,7 @@ export default function HomeScreen({ navigation }) {
                 alignItems: "center",
                 justifyContent: "center",
                 marginTop: 25,
-                backgroundColor: "#121212",
+                backgroundColor: "#FF4C29",
                 height: 50,
                 width: 100,
                 borderRadius: 50,
@@ -125,7 +102,7 @@ export default function HomeScreen({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#4affc3",
+      backgroundColor: "#082032",
       alignItems: "center",
       justifyContent: "center",
     },
